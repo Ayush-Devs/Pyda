@@ -32,17 +32,7 @@ jobs:
         run: |
           poetry install --with dev
 
-      # ---------- LINT ----------
-      - name: Run flake8
-        run: |
-          poetry run flake8 src tests
-
-      # ---------- SECURITY ----------
-      - name: Run bandit
-        run: |
-          poetry run bandit -r src -c bandit.yaml
-
-      # ---------- PRE-COMMIT ----------
+      # ---------- PRE-COMMIT (ALL LINTING + FORMAT + SECURITY) ----------
       - name: Run pre-commit hooks
         run: |
           poetry run pre-commit run --all-files
