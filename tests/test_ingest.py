@@ -2,24 +2,34 @@
 
 """Tests for src/pyda/ingestion/ingest.py"""
 
+from pathlib import Path
+
 import pandas as pd
+import pytest
 
 from pyda.ingestion.ingest import read_csv, read_json
 
+CSV_FILE = Path("tests/data/test_data.csv")
+JSON_FILE = Path("tests/data/test_data.json")
 
-def test_read_csv(tmp_path):
-    """Tests csv"""
-    file = tmp_path / "test.csv"
-    file.write_text("a,b\n1,2\n3,4")
-    df = read_csv(file)
+
+def test_read_csv_returns_dataframe():
+    """Reads csv"""
+    df = read_csv(CSV_FILE)
     assert isinstance(df, pd.DataFrame)
-    assert df.shape == (2, 2)
+    assert not df.empty
+    assert "id" in df.columns
 
 
-def test_read_json(tmp_path):
-    """Tests json"""
-    file = tmp_path / "test.json"
-    file.write_text('[{"a":1,"b":2},{"a":3,"b":4}]')
-    df = read_json(file)
+def test_read_csv_file_not_found():
+    """If csv not found"""
+    with pytest.raises(FileNotFoundError):
+        read_csv("tests/data/non_existent.csv")
+
+
+def test_read_json_returns_dataframe():
+    """Reads json"""
+    df = read_json(JSON_FILE)
     assert isinstance(df, pd.DataFrame)
-    assert df.shape == (2, 2)
+    assert not df.empty
+    assert "name" in df.columns

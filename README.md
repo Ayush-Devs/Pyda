@@ -154,7 +154,21 @@ This ensures **long-term maintainability** while remaining beginner-friendly.
 
 ## Development & Contribution
 
-For details on contributing, please refer to the [CONTRIBUTION.md](CONTRIBUTION.md) file.
+Contributions are welcome at all levels — from documentation improvements to core architecture work.
+
+To get started, check the project idea board:
+
+📄 **`ISSUES.md`** — This file contains structured contribution ideas categorized by difficulty:
+- Beginner-friendly tasks
+- Core feature expansions
+- Long-term architecture goals
+
+If you're new to open source or this codebase, start with the **easy** issues.
+If you're experienced and want to build core systems, explore the **medium** and **hard** sections.
+
+For contribution guidelines, setup instructions, and workflow:
+👉 See **`CONTRIBUTING.md`**
+
 
 Basic setup for development:
 

@@ -4,7 +4,7 @@ First off, thank you for your interest in contributing! Your help makes Pyda bet
 
 This guide will help you get started with contributing to the project smoothly.
 
----
+
 
 ## Table of Contents
 1. [Getting Started](#getting-started)
@@ -14,7 +14,7 @@ This guide will help you get started with contributing to the project smoothly.
 5. [Submitting a Pull Request](#submitting-a-pull-request)
 6. [Reporting Issues](#reporting-issues)
 
----
+
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ poetry run python
 
 Now you are ready to start coding!
 
----
+
 
 ## Coding Guidelines
 
@@ -44,7 +44,7 @@ Now you are ready to start coding!
 - Write clear, concise **docstrings** for any new functions.
 - Keep changes **small and focused** per PR.
 
----
+
 
 ## Running Tests
 
@@ -56,7 +56,7 @@ poetry run pytest
 
 All tests should pass before opening a pull request.
 
----
+
 
 ## Pre-Commit Hooks
 
@@ -76,7 +76,7 @@ The hooks include:
 
 These hooks help keep contributions consistent and error-free.
 
----
+
 
 ## Submitting a Pull Request
 
@@ -99,7 +99,7 @@ git commit -m "Add feature X or fix Y"
 
 5. Describe your changes clearly and link to any related issues if applicable.
 
----
+
 
 ## Reporting Issues
 
@@ -111,7 +111,7 @@ Include:
 - Expected vs. actual behavior
 - Environment details (Python version, OS, etc.)
 
----
+
 
 Thank you for helping make Pyda better!
 We appreciate all contributions, no matter how small.
