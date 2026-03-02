@@ -1,11 +1,12 @@
 # examples/titanic/example_ingest.py
-from pyda.ingestion.ingest import read_csv
+
+from pyda.ingestion.ingest import load_source
 
 
 def main():
-    csv_file = "examples/titanic/Titanic-Dataset.xls"
+    csv_file = "examples/titanic/Titanic-Dataset.csv"
 
-    df = read_csv(csv_file)
+    df = load_source("csv", csv_file)
 
     print("\nFirst 5 rows of the dataset:")
     print(df.head())
