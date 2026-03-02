@@ -1,0 +1,48 @@
+name: Lint & Static Analysis
+
+on:
+  pull_request:
+    branches: ["*"]
+  push:
+    branches: ["*"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Poetry
+        run: |
+          pip install poetry
+
+      - name: Configure Poetry
+        run: |
+          poetry config virtualenvs.create false
+
+      - name: Install dependencies
+        run: |
+          poetry install --with dev
+
+      # ---------- LINT ----------
+      - name: Run flake8
+        run: |
+          poetry run flake8 src tests
+
+      # ---------- SECURITY ----------
+      - name: Run bandit
+        run: |
+          poetry run bandit -r src -c bandit.yaml
+
+      # ---------- PRE-COMMIT ----------
+      - name: Run pre-commit hooks
+        run: |
+          poetry run pre-commit run --all-files
