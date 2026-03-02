@@ -1,20 +1,27 @@
 [project]
 name = "pyda"
 version = "0.1.0"
-description = ""
+description = "A beginner-friendly lightweight ETL library"
 authors = [
-    {name = "Ayush Agarwal",email = "dearayush2@gmail.com"}
+    { name = "Ayush Agarwal", email = "dearayush2@gmail.com" }
 ]
 readme = "README.md"
-packages = [
-    { include = "src/pyda" }
-]
 requires-python = "^3.12"
 dependencies = [
     "pandas (>=3.0.1,<4.0.0)"
 ]
-
+packages = [
+    { include = "pyda", from = "src" }
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dev-dependencies]
+pytest = "^9.0.2"
+
+[dependency-groups]
+dev = [
+    "pre-commit (>=4.5.1,<5.0.0)"
+]
