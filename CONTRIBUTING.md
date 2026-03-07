@@ -46,18 +46,6 @@ Now you are ready to start coding!
 
 
 
-## Running Tests
-
-Pyda uses **pytest** for testing. Run tests locally before submitting a PR:
-
-```bash
-poetry run pytest
-```
-
-All tests should pass before opening a pull request.
-
-
-
 ## Pre-Commit Hooks
 
 We use pre-commit hooks to keep the code clean and secure. Make sure they pass before committing:
@@ -75,6 +63,32 @@ The hooks include:
 - `detect-private-key`, `check-yaml`, `check-json`, and `trailing-whitespace`
 
 These hooks help keep contributions consistent and error-free.
+
+### Test Coverage (pytest-cov)
+
+This project enforces minimum test coverage to ensure code quality and reliability.
+
+1. Run coverage locally
+
+```bash
+poetry run pytest --cov=pyda --cov-report=term
+```
+
+2. All contributions must maintain ≥ 85% coverage.
+
+3. New features must include tests (Exception paths and edge cases must be tested too).
+
+> Coverage is treated as a quality gate, not a vanity metric.
+
+## Running Tests
+
+Pyda uses **pytest** for testing. Run tests locally before submitting a PR:
+
+```bash
+poetry run pytest
+```
+
+All tests should pass before opening a pull request.
 
 
 
