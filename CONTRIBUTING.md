@@ -9,8 +9,8 @@ This guide will help you get started with contributing to the project smoothly.
 ## Table of Contents
 1. [Getting Started](#getting-started)
 2. [Coding Guidelines](#coding-guidelines)
-3. [Running Tests](#running-tests)
-4. [Pre-Commit Hooks](#pre-commit-hooks)
+3. [Pre-Commit Hooks](#pre-commit-hooks)
+4. [Running Tests](#running-tests)
 5. [Submitting a Pull Request](#submitting-a-pull-request)
 6. [Reporting Issues](#reporting-issues)
 
